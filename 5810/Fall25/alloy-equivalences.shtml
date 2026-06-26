@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+ <!--#include virtual="head.shtml" -->
+ <body role="document">
+  <!---------------------------------------------------->
+  <header class="site-header">
+   <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+     <!--#include virtual="navbar-header.shtml" -->
+     <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+       <li class="active"><a href="index.shtml">Home</a></li>
+       <li><a href="syllabus.shtml">Syllabus</a></li>
+       <li><a href="lectures.shtml">Lectures</a></li>
+       <li><a href="project.shtml">Project</a></li>
+       <li><a href="exams.shtml">Exams</a></li>
+       <!--#include virtual="materials-dropdown.shtml" -->
+       <li><a href="credits.shtml">Credits</a></li>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </header>
+  <!---------------------------------------------------->
+  <div class="container">
+   <!---------------------------------------------------->
+   <div class="container main">
+
+<h2>Equivalences in Alloy</h2>
+
+We say that two non-temporal Alloy expressions E1 and E2 of the same type are equivalent, written E1 ≡ E2, if they evaluate to the same value in every Alloy instance.
+
+Below are some noteworthy equivalences in Alloy.
+
+<h3>Set Operators</h3>
+
+<p>For all set/relations A, B, and C,
+the following equivalences hold in Alloy 
+whenever their left- and right-hand sides are well typed:
+</p>
+
+<ul>
+<li>A <b>& univ</b> &nbsp; ≡ &nbsp; A</li>
+<li>A <b>& none</b> &nbsp; ≡ &nbsp; <b>none</b></li>
+<li>A <b>&</b> A &nbsp; ≡ &nbsp; A</li>
+<li>A <b>+</b> A &nbsp; ≡ &nbsp; A</li>
+<li>A <b>+ univ</b> &nbsp; ≡ &nbsp; <b>univ</b></li>
+<li>A <b>+</b> <b>none</b>  &nbsp; ≡ &nbsp; A</li>
+<li>A <b>&</b> B &nbsp; ≡ &nbsp; B <b>&</b> A</li>
+<li>A <b>+</b> B &nbsp; ≡ &nbsp; B <b>+</b> A</li>
+<li>A <b>&</b> (B <b>&</b> C) &nbsp; ≡ &nbsp; (A <b>&</b> B) <b>&</b> C </li>
+<li>A <b>+</b> (B <b>+</b> C) &nbsp; ≡ &nbsp; (A <b>+</b> B) <b>+</b> C </li>
+<li>A <b>&</b> (B <b>+</b> C) &nbsp; ≡ &nbsp; (A <b>&</b> B) <b>+</b> (A <b>&</b> C)</li>
+<li>A <b>+</b> (B <b>&</b> C) &nbsp; ≡ &nbsp; (A <b>+</b> B) <b>&</b> (A <b>+</b> C)</li>
+<li>A <b>.</b> (B <b>.</b> C) &nbsp; ≡ &nbsp; (A <b>.</b> B) <b>.</b> C</li>
+<li>
+  A <b>.</b> (B <b>+</b> C) &nbsp; ≡ &nbsp; (A <b>.</b> B) <b>+</b> (A <b>.</b> C)
+</li>
+<li>
+  (A <b>+</b> B) <b>.</b> C &nbsp; ≡ &nbsp; (A <b>.</b> C) <b>+</b> (B <b>.</b> C)
+</li>
+<li>~~A &nbsp; ≡ &nbsp; A </li>
+<li>~(A <b>&</b> B) &nbsp; ≡ &nbsp; ~A <b>&</b> ~B </li>
+<li>~(A <b>+</b> B) &nbsp; ≡ &nbsp; ~A <b>+</b> ~B </li>
+<li>~(A <b>.</b> B) &nbsp; ≡ &nbsp; ~B <b>.</b> ~A </li>
+<li>~^A &nbsp; ≡ &nbsp; ^~A </li>
+<li>~*A &nbsp; ≡ &nbsp; *~A </li>
+<li>^A &nbsp; ≡ &nbsp; A
+  &nbsp;&nbsp; whenever is A is transitive
+</li>
+<li>*A &nbsp; ≡ &nbsp; A
+  &nbsp;&nbsp; whenever is A is reflexive and transitive
+</li>
+<li>^^A &nbsp; ≡ &nbsp; ^A </li>
+<li>**A &nbsp; ≡ &nbsp; *A </li>
+
+</ul>
+
+<h3>Boolean Operators</h3>
+
+<p>Let ⊤ denote any formula that is alway true (e.g., <b>none</b> = <b>none</b>) and
+let ⊥ denote any formula that is alway false (e.g., (<b>none</b> != <b>none</b>)).
+</p>
+
+<p>For all set/relations A, B, C, and x <em>where x is a singleton</em>,
+the following equivalences hold in Alloy 
+whenever their left- and right-hand sides are well typed:
+</p>
+
+<ul>
+  <li><b>none in</b> A &nbsp; ≡ &nbsp; ⊤</li>
+  <li><b>some</b> A <b>and</b> A <b>in</b> <b>none</b> &nbsp; ≡ &nbsp; ⊥
+  </li>  
+  <li>A <b>in</b> A &nbsp; ≡ &nbsp; ⊤</li>
+  <li>
+    A <b>in</b> B &nbsp; ≡ &nbsp; 
+    (A <b>&</b> B) = A
+  </li>
+  <li>
+    A <b>in</b> B &nbsp; ≡ &nbsp; 
+    (A <b>+</b> B) = B 
+  </li>
+  <li>
+    A = B &nbsp; ≡ &nbsp; 
+    (A <b>in</b> B) <b>and</b> (B <b>in</b> A)
+  </li>
+  <li>
+    x <b>in</b> (A & B) &nbsp; ≡ &nbsp; 
+    (x <b>in</b> A) <b>and</b> (x <b>in</b> B)
+  </li>
+  <li>
+    x <b>in</b> (A + B) &nbsp; ≡ &nbsp; 
+    (x <b>in</b> A) <b>or</b> (x <b>in</b> B)
+  </li>
+  <li>
+    x <b>in</b> (A - B) &nbsp; ≡ &nbsp; 
+    (x <b>in</b> A) <b>and</b> (x <b>!in</b> B)
+  </li>
+  <li><b>no</b> A &nbsp; ≡ &nbsp; A = <b>none</b></li>
+  <li><b>no</b> A &nbsp; ≡ &nbsp; <b>all</b> x: A | ⊥</li>
+  <li><b>some</b> A &nbsp; ≡ &nbsp; A != <b>none</b></li>
+  <li><b>some</b> A &nbsp; ≡ &nbsp; <b>some</b> x: A | ⊤</li>
+  <li><b>lone</b> A &nbsp; ≡ &nbsp; <b>all</b> x, y: A | x = y</li>
+  <li><b>one</b> A &nbsp; ≡ &nbsp; <b>some</b> x: A | x = A</li>
+  <li><b>one</b> A &nbsp; ≡ &nbsp; 
+    (<b>some</b> A) <b>and</b> <b>all</b> x, y: A | x = y
+  </li>
+</ul>
+
+<h3>Boolean Connectives</h3>
+
+<p>For all formulas F, F1, F2, G, G1, and G2,
+  the following equivalences hold in Alloy:  
+</p>
+
+<ul>
+    <li>F <b>and</b> ⊤ &nbsp; ≡ &nbsp; F</li>
+    <li>F <b>or</b> ⊤ &nbsp; ≡ &nbsp; ⊤</li>
+    <li>F <b>and</b> ⊥ &nbsp; ≡ &nbsp; ⊥</li>
+    <li>F <b>or</b> ⊥  &nbsp; ≡ &nbsp; F</li>
+    <li>F <b>and</b> G &nbsp; ≡ &nbsp; G <b>and</b> F</li>
+    <li>F <b>or</b> G &nbsp; ≡ &nbsp; G <b>or</b> F</li>
+  <li>F <b>and</b> (G <b>and</b> H) &nbsp; ≡ &nbsp; (F <b>and</b> G) <b>and</b> H</li>
+  <li>F <b>or</b> (G <b>or</b> H) &nbsp; ≡ &nbsp; (F <b>or</b> G) <b>or</b> H</li>
+  <li>F <b>and</b> (G <b>or</b> H) &nbsp; ≡ &nbsp; (F <b>and</b> G) <b>or</b> (F <b>and</b> H)</li>
+  <li>F <b>or</b> (G <b>and</b> H) &nbsp; ≡ &nbsp; (F <b>or</b> G) <b>and</b> (F <b>or</b> H)</li>
+  <li><b>not not</b> F &nbsp; ≡ &nbsp; F</li>
+  <li><b>not</b> (F <b>and</b> G) &nbsp; ≡ &nbsp; (<b>not</b> F) <b>or</b> (<b>not</b> G)</li>
+  <li><b>not</b> (F <b>or</b> G) &nbsp; ≡ &nbsp; (<b>not</b> F) <b>and</b> (<b>not</b> G)</li>
+  <li>F <b>implies</b> G &nbsp; ≡ &nbsp; (<b>not</b> F) <b>or</b> G</li>
+  <li>F <b>implies</b> ⊤ &nbsp; ≡ &nbsp; ⊤</li>
+  <li>F <b>implies</b> ⊥ &nbsp; ≡ &nbsp; <b>not</b> F</li>
+  <li>⊤ <b>implies</b> G &nbsp; ≡ &nbsp; G</li>
+  <li>⊥ <b>implies</b> G &nbsp; ≡ &nbsp; ⊤</li>
+  <li><b>not</b> (F <b>implies</b> G) &nbsp; ≡ &nbsp; F <b>and</b> (<b>not</b> G)</li>
+  <li>
+    (F1 <b>and</b> F2) <b>implies</b> G  &nbsp; ≡ &nbsp; 
+    F1 <b>implies</b> (F2 <b>implies</b> G)
+  </li>
+  <li>
+    F <b>implies</b> (G1 <b>and</b> G2) &nbsp; ≡ &nbsp; 
+    (F <b>implies</b> G1) <b>and</b> (F <b>implies</b> G2)
+  </li>
+  <li>
+    (F1 <b>or</b> F2) <b>implies</b> G &nbsp; ≡ &nbsp; 
+    (F1 <b>implies</b> G) <b>and</b>
+    (F2 <b>implies</b> G)
+  </li>
+  <li>
+    F <b>implies</b> (G1 <b>or</b> G2) &nbsp; ≡ &nbsp; 
+    (F <b>implies</b> G1) <b>or</b> (F <b>implies</b> G2)
+  </li>
+</ul>
+
+<h3>Quantifiers</h3>
+
+<p>For all formulas F and all sets A and B,
+  the following equivalences hold in Alloy:
+</p>
+
+  <ul>
+    <li><b>all</b> x: A | ⊤ &nbsp; ≡ &nbsp; ⊤</li>
+    <li><b>some</b> x: A | ⊥  &nbsp; ≡ &nbsp; ⊥ </li>
+    <li><b>all</b> x: <b>none</b> | F &nbsp; ≡ &nbsp; ⊤</li>
+    <li><b>some</b> x: <b>none</b> | F &nbsp; ≡ &nbsp; ⊥</li>
+    <li>
+      <b>all</b> x: A | <b>all</b> y: B | F &nbsp; ≡ &nbsp;
+      <b>all</b> y: B | <b>all</b> x: A | F
+    </li>
+    <li>
+      <b>some</b> x: A | <b>some</b> y: B | F &nbsp; ≡ &nbsp;
+      <b>some</b> y: B | <b>some</b> x: A | F
+    </li>
+    <li><b>not all</b> x: A | F &nbsp; ≡ &nbsp; <b>some</b> x: A | <b>not</b> F</li>
+    <li><b>not some</b> x: A | F &nbsp; ≡ &nbsp; <b>all</b> x: A | <b>not</b> F</li>
+    <li>
+      <b>all</b> x: A | (F <b>and</b> G) &nbsp; ≡ &nbsp; 
+      (<b>all</b> x: A | F) <b>and</b> (<b>all</b> x: A | G)
+    </li>
+    <li>
+      <b>some</b> x: A | (F <b>or</b> G) &nbsp; ≡ &nbsp; 
+      (<b>some</b> x: A | F) <b>or</b> (<b>some</b> x: A | G)
+    </li>
+    <li>
+      <b>no</b> x: A | F &nbsp; ≡ &nbsp; <b>all</b> x: A | <b>not</b> F
+    </li>
+    <li><b>all</b> x: A | F &nbsp; ≡ &nbsp; { x: A | F } = A</li>
+    <li><b>some</b> x: A | F &nbsp; ≡ &nbsp; <b>some</b> { x: A | F }</li>
+    <li>
+      <b>no</b> x: A | F &nbsp; ≡ &nbsp; <b>no</b> { x: A | F }
+    </li>
+    <li>
+      <b>one</b> x: A | F &nbsp; ≡ &nbsp; <b>one</b> { x: A | F }
+    </li>
+    <li>
+      <b>lone</b> x: A | F &nbsp; ≡ &nbsp; 
+      (<b>no</b> x: A | F) <b>or</b> (<b>one</b> x: A | F) 
+    </li>
+  </ul>
+
+  <h3>Temporal operators</h3>
+
+  We say that two temporal Alloy formulas F and G are equivalent, written F ≡ G, if they are satisfied by exactly the same traces.
+  
+<p>For all temporal formulas F and G,
+  the following equivalences hold in Alloy 6.
+  <br>
+  <br>
+  <b>Note:</b> Keep in mind that unary temporal operators bind more strongly than any binary operators. <br>
+  (E.g., <b>always</b> F <b>and</b> G parses as (<b>always</b> F) <b>and</b> G, not as <b>always</b> (F <b>and</b> G).)
+</p>
+
+  <h4>Future operators</h4>
+
+  <ol>
+    <li><b>always</b> F &nbsp; ≡ &nbsp; F <b>and</b> <b>after always</b> F</li>
+    <li><b>eventually</b> F &nbsp; ≡ &nbsp; F <b>or</b> <b>after eventually</b> F</li>
+    <li><b>always always</b> F &nbsp; ≡ &nbsp; <b>always</b> F</li>
+    <li><b>eventually eventually</b> F &nbsp; ≡ &nbsp; <b>eventually</b> F</li>
+    <li><b>not always</b> F &nbsp; ≡ &nbsp; <b>eventually not</b> F</li>
+    <li><b>not eventually</b> F &nbsp; ≡ &nbsp; <b>always not</b> F</li>
+    <li><b>always</b> (F <b>and</b> G) &nbsp; ≡ &nbsp; 
+      (<b>always</b> F) <b>and</b> (<b>always</b> G)
+    </li>
+    <li>
+      <b>eventually</b> (F <b>or</b> G) &nbsp; ≡ &nbsp; 
+      (<b>eventually</b> F) <b>or</b> (<b>eventually</b> G)
+    </li>
+    <li><b>not after</b> F &nbsp; ≡ &nbsp; <b>after not</b> F</li>
+    <!-- <li><b>after before</b> F &nbsp; ≡ &nbsp; F</li> -->
+    <li>
+      <b>eventually</b> F &nbsp; ≡ &nbsp; 
+      ⊤ <b>until</b> F
+    </li>
+    <li>
+      F <b>until</b> G &nbsp; ≡ &nbsp; 
+      G <b>or</b> (F <b>and</b> <b>after</b> (F <b>until</b> G))
+    </li>
+    <li><b>after always before</b> ⊤ &nbsp; ≡ &nbsp; ⊤</li>
+  </ol>
+
+<h4>Past operators</h4>
+
+  <ol>
+    <li>
+      <b>historically</b> F &nbsp; ≡ &nbsp; 
+      F <b>and</b> (<b>not before</b> ⊤ <b>or before historically</b> F)
+    </li>
+    <li>
+      <b>once</b> F &nbsp; ≡ &nbsp; 
+      F <b>or</b> <b>before once</b> F
+    </li>
+    <li><b>historically historically</b> F &nbsp; ≡ &nbsp; <b>historically</b> F</li>
+    <li><b>once once</b> F &nbsp; ≡ &nbsp; <b>once</b> F</li>
+    <li><b>not historically</b> F &nbsp; ≡ &nbsp; <b>once not</b> F</li>
+    <li><b>not once</b> F &nbsp; ≡ &nbsp; <b>historically not</b> F</li>
+    <li><b>historically</b> (F <b>and</b> G) &nbsp; ≡ &nbsp; 
+      (<b>historically</b> F) <b>and</b> (<b>historically</b> G)
+    </li>
+    <li>
+      <b>once</b> (F <b>or</b> G) &nbsp; ≡ &nbsp; 
+      (<b>once</b> F) <b>or</b> (<b>once</b> G)
+    </li>
+    <li>
+      <b>once</b> F &nbsp; ≡ &nbsp; 
+      ⊤ <b>since</b> F
+    </li>
+    <li>
+      F <b>since</b> G &nbsp; ≡ &nbsp; 
+      G <b>or</b> (F <b>and</b> <b>before</b> (F <b>since</b> G))
+    </li>
+  </ol>
+
+  <br>
+
+  </div>
+  </div>
+  <!--#include virtual="footer.shtml" -->
+ </body>
+</html>

@@ -1,0 +1,23 @@
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script>(function($,d){$.each(readyQ,function(i,f){$(f)});$.each(bindReadyQ,function(i,f){$(d).bind("ready",f)})})(jQuery,document)</script>
+
+<script>
+$(document).ready(function () {
+  /* collapse dropdown navbar */
+  $('.navbar li a').click(function (e) {
+    $(".navbar-toggle:visible").click();
+  });
+});
+</script>
+
+
+<div class="container">
+<br>
+<center>
+Copyright: <a href="http://homepage.divms.uiowa.edu/~tinelli/">Cesare Tinelli</a>, 
+The University of Iowa, 2025
+</center>
+<br>
+</div>

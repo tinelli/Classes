@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+ <!--#include virtual="head.shtml" -->
+ <body role="document">
+  <!---------------------------------------------------->
+  <header class="site-header">
+   <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+     <!--#include virtual="navbar-header.shtml" -->
+     <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+       <li><a href="index.shtml">Home</a></li>
+       <li><a href="syllabus.shtml">Syllabus</a></li>
+       <li><a href="lectures.shtml">Lectures</a></li>
+       <li><a href="exams.shtml">Exams</a></li>
+       <!--#include virtual="materials-dropdown.shtml" -->
+       <li><a href="credits.shtml">Credits</a></li>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </header>
+  <!---------------------------------------------------->
+  <div class="container">
+   <!---------------------------------------------------->
+   <div class="container sidebar">
+   <div class="panel panel-info announce">
+   <div class="panel-heading">
+  <h3 class="panel-title">Tools</h3>
+ </div>
+ <div class="panel-body">
+  <ul>
+   <li><a href="#alloy">Alloy Analyzer</a></li>
+   <!-- <li><a href="#kind">Kind 2</a></li> -->
+   <li><a href="#dafny">Dafny</a></li>
+  </ul>
+ </div>
+</div>
+   </div>
+
+
+<!---------------------------------------------------->
+<div class="container main">
+<h2>Tools</h2>
+
+<!--
+[This page will contain information about the tools and software used in the course]
+-->
+<p>This page contains information about the tools and software used in the course. 
+<!-- [More information will be added later.] -->
+See the <a href="resources.shtml">Resources</a> section of this site for additional information.
+</p>  
+<p>
+
+You can use those tools on your own computers or on the machines in the DIVMS labs. 
+You can log in the lab machines either 
+<ul>
+<li>
+directly, by using one of the desktop computers in 301MLH, or 
+</li>
+<li>
+remotely, by connecting to the CS Department's FastX server;
+see the <a href="https://linux.clas.uiowa.edu/help/fastx">CLAS help pages</a>
+for additional information.
+</li>
+</ul>
+
+<!--------------------------------------------------------------------------->
+<a name="alloy"></a>
+<br> 
+
+<h3>Alloy Analyzer</h3>
+
+<h4>Installing the Analyzer</h4>
+
+<p> 
+You can download the Alloy Analyzer to your own computer or to those in the lab.
+The latest release (Alloytools 6.2.*) is available <a href="https://github.com/AlloyTools/org.alloytools.alloy/releases">here</a> 
+for all major operating systems.
+</p>
+<p>
+The easiest way to install the tool in Linux or Windows is simply to download 
+the latest <tt>org.alloytools.alloy.dist.jar</tt> file onto your Desktop and then launch it 
+either by double clicking on its icon (Windows or Mac) or 
+right-clicking the icon and then choosing "Open With java" (Linux).
+</p>
+
+<p>
+<b>Note 1:</b> 
+Mac users should want install the Mac OS native version of the analyzer (<tt>alloy-6.2.*-mac-*</tt>).
+</p>
+
+<p>
+<b>Note 2:</b> On Linux, Java might complain about not having enough space for the object heap.
+In that case, you will need to launch the Alloy Analyzer from a terminal window.
+<ol> 
+<li>
+Open a terminal and move to the subdirectory that contains the file <tt>org.alloytools.alloy.dist.jar</tt>.
+<li>
+At the terminal's prompt, type: <br>
+<dl>
+<dd><tt>java -Xms512m -Xmx1024m -jar org.alloytools.alloy.dist.jar  &</tt>
+</dd>
+</dl>
+</li>
+</ol>
+
+<h4>Using the Analyzer</h4> 
+
+<p>Click on the Help menu in the Analyzer's top bar for a quick guide on how to use the tool.
+</p>
+
+<h4>Alloy in VS Code</h4> 
+<p> 
+<a href="https://code.visualstudio.com">Visual Studio Code</a> 
+is an open source modern IDE available for all major operating systems.
+VS Code has an excellent 
+<a href="https://marketplace.visualstudio.com/items?itemName=ArashSahebolamri.alloy&ssr=false#overview">Alloy extension</a> 
+that comes with its own copy of the Alloy Analyzer.
+The extension is a breeze to install and just as easy to use.
+</p>
+
+<p>
+   <b>Note:</b> VS Code is preinstalled 
+   on the <a href="https://linux.clas.uiowa.edu/help/fastx">FastX</a> remote server.
+   You can access it from the <b>Applications | Computer Science</b> menu of the desktop
+   and then install your own extensions.
+</p>
+
+
+<!--------------------------------------------------------------------------->
+<a name="dafny"></a>
+<br>
+
+<h3>Dafny</h3>
+
+<h4>Installing Dafny</h4>  
+
+<p>
+Although the <a href="https://github.com/dafny-lang/dafny">Dafny</a> verifier is available 
+as a stand-alone, command-line tool, it is best used  
+as an extension of <a href="https://code.visualstudio.com/">VS Code</a>,
+which we highly recommend.
+See the extension's 
+<a href="https://marketplace.visualstudio.com/items?itemName=dafny-lang.ide-vscode">webpage</a>
+for installation and usage instructions.
+</p>
+
+<p>
+<b>Note:</b> On Linux and MacOs you will need to have a separate installation of the latest version of <a href="https://dotnet.microsoft.com/en-us/download">.NET</a> too.
+That is easy to do on your computer by downloading the installer.
+</p>
+
+<p>
+<b>Note:</b> VS Code is preinstalled 
+on the <a href="https://linux.clas.uiowa.edu/help/fastx">FastX</a> remote server.
+You can access it from the <b>Applications | Computer Science</b> menu of the desktop.
+You can install the Dafny extension yourself as in the instructions above 
+but without having to install .NET since it is already installed.
+The path to the .NET executable is <code>/usr/bin/dotnet</code> .
+</p>
+<br>
+<br>
+   </div>
+  </div>
+  <!--#include virtual="footer.shtml" -->
+ </body>
+</html>

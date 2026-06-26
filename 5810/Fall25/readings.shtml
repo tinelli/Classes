@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+ <!--#include virtual="head.shtml" -->
+ <body role="document">
+  <!---------------------------------------------------->
+  <header class="site-header">
+   <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+     <!--#include virtual="navbar-header.shtml" -->
+     <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+       <li><a href="index.shtml">Home</a></li>
+       <li><a href="syllabus.shtml">Syllabus</a></li>
+       <li><a href="lectures.shtml">Lectures</a></li>
+       <li><a href="exams.shtml">Exams</a></li>
+       <!--#include virtual="materials-dropdown.shtml" -->
+       <li><a href="credits.shtml">Credits</a></li>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </header>
+  <!---------------------------------------------------->
+  <div class="container">
+   <!---------------------------------------------------->
+   <div class="container main">
+   <h2>Readings</h2>
+
+<h3>Articles and Lecture Notes</h3>
+
+<table cellspacing=4>  
+<thead>
+<tr>
+<th width="90"></th>
+<th></th>
+</tr>
+</thead>
+<tr valign=top> 
+<td> <a name="Barr13"></a> [Barr13] </td> 
+<td> M. Barr.
+<a href="Papers/Barr13.pdf"><b>Bookout vs. Toyota - 2005 Camry L4 Software Analysis</b></a>.
+Report notes, 2013.
+</td> 
+</tr>
+ 
+<tr valign=top> 
+<td> <a name="Beck06"></a> [Beck06] </td> 
+<td> B. Beckert, T. Hoare, R. H&auml;hnle, D. R. Smith, C. Green, S. Ranise, C. Tinelli, T. Ball, S. K. Rajamani.
+<a href="http://dx.doi.org.proxy.lib.uiowa.edu/10.1109/MIS.2006.117"><b>Intelligent Systems and Formal Methods in Software Engineering</b></a>.
+In
+<i>Trends and Controversies - IEEE Intelligent Systems Magazine</i>, 
+21(6):71-81, November/December 2006.<br>
+(Restricted access.)
+</td> 
+</tr>
+ 
+<tr valign=top> 
+<td> <a name="Beck07"></a> [Beck07] </td> 
+<td> B. Beckert, R. H&auml;hnle, P. Schmitt. (Eds.) 
+<a href="http://www.springer.com/east/home/generic/search/results?SGWID=5-40109-22-173712406-0"> <b>Verification of Object-Oriented Software. The KeY Approach</b></a>. Lecture Notes in Computer Science, Vol. 4334.
+Springer, 2007.
+(Also available electronically to UI students <a href="http://proxy.lib.uiowa.edu/login?url=http://springerlink.metapress.com/openurl.asp?genre=issue&issn=0302-9743&volume=4334">here</a>.)
+</td> 
+</tr> 
+
+<!--
+<tr valign=top> 
+<td> <a name="Chal06"></a> [Chal06] </td>
+<td> P. Chalin, J. Kiniry,  G. Leavens, and E. Poll. 
+<a href="Papers/Chal06.pdf"><b> Beyond Assertions: Advanced Specification and Verification with JML and ESC/Java2.</b></a> In Formal Methods for Components and Objects (FMCO) 2005, Revised Lectures, pages 342-363. Volume 4111 of Lecture Notes in Computer Science, Springer Verlag, 2006
+</td> </tr>
+-->
+
+<tr valign=top> 
+<td> <a name="Cham16"></a> [Cham16] </td>
+<td> A. Champion, A. Gurfinkel, T. Kahsai, and C. Tinelli.
+<a href="Papers/Cham16.pdf"> <b>CoCoSpec: A Mode-Aware Contract Language for Reactive Systems</b></a>. TIn Proceedings of the 14th International Conference on Software Engineering and Formal Methods (SEFM 2016).
+Springer, 2016.
+</td>
+</tr>
+  
+<tr valign=top> 
+<td> <a name="Clar96"></a> [Clar96] </td>
+<td> E. Clarke and J. M. Wing. 
+<a href="Papers/Clar96.pdf"> <b>Formal Methods: State of the Art and Future Directions</b></a>. Technical Report CMU-CS-96-178. Department of Computer Science, Carnegie-Mellon University, 1996. 
+</td>
+</tr>
+  
+<tr valign=top> 
+<td> <a name="Gara13"></a> [Gara13] </td>
+<td> Hubert Garavel (editor) and Susanne Graf. 
+<a href="Papers/Gara13.pdf"> <b> Formal Methods for Safe and Secure Computer Systems</b></a>. Bundesamt für Sicherheit in der Informationstechnik, BSI study 875, Bonn, Germany, 362 pages, 2013</td>
+</tr>
+  
+<tr valign=top>
+<td> <a name="Halb91"></a> [Halb91] </td>
+<td> N. Halbwachs, P. Caspi. P. Raymond, and D. Pilaud. 
+<a href="Papers/Halb91.pdf"><b>The synchronous data flow programming language LUSTRE</b></a>. 
+Proceedings of the IEEE. 79(9): 1305-1320. Sep 1991.
+</td> 
+</tr>
+
+<tr valign=top>
+<td> <a name="Halb92"></a> [Halb92] </td>
+<td>N. Halbwachs, F. Lagnier, C. Ratel. 
+<a href="Papers/Halb92.pdf"><b>Programming and verifying real-time systems by means of the synchronous data-flow language LUSTRE</b></a>. 
+IEEE Transaction on Software Engineering.
+18(9): 785-793. 1992.
+</td> 
+</tr>
+
+<tr valign=top> 
+<td> <a name="Halb99"></a> [Halb99] </td>
+<td> N. Halbwachs and P. Raymond. <a href="Papers/Halb99.pdf"> 
+<b>Validation of Synchronous Reactive Systems: From Formal Verification to Automatic Testing</b></a>. 
+In Proceedings of the 5th Asian Computing Science Conference on Advances in Computing Science.
+Lecture Notes In Computer Science. Vol. 1742.
+Springer, 1999.
+</td> 
+</tr>
+
+<tr valign=top>
+<td> <a name="Halb02"></a> [Halb02] </td>
+<td> N. Halbwachs and P. Raymond. 
+<a href="Papers/Halb02.pdf"> <b>A Tutorial of Lustre</b></a>. 
+Technical report, 2002. 
+</td> 
+</tr>
+
+<tr valign=top>
+<td> <a name="Haxt10"></a> [Haxt10] </td>
+<td>A. Haxthausen. <a href="Papers/Haxt10.pdf"> 
+<b>An Introduction to Formal Methods for the Development of Safety-critical Applications</b></a>. 
+Technical report, 2010. 
+</td> 
+</tr>
+
+<tr valign=top> 
+<td> <a name="Herb11"></a>[Herb11] </td> 
+<td>L. Herbert, R. Leino, and J. Quaresma.  
+<a href="Papers/Herb11.pdf"><b>Using Dafny, an Automatic Program Verifier</b></a>.
+LASER International Summer School 2011, lecture notes.
+</td> 
+</tr>
+
+<!--
+<tr valign=top> <td> <a name="Hoare69"></a> [Hoare69] </td> <td> C.A.R Hoare.  
+<a href="Papers/Hoare69.pdf"><b>An axiomatic basis for computer programming.</b></a>
+Comm. of. ACM 12(10), 1969.
+</td> </tr>
+-->
+
+<tr valign=top> 
+<td> <a name="Koen12"></a> [Koen12] </td> 
+<td> J. Koenig and R. Leino.  
+<a href="Papers/Koen12.pdf"><b>Getting started with Dafny: a guide</b></a>.
+In Marktoberdorf 2011 lecture notes. To appear, 2012.
+</td> 
+</tr>
+
+<tr valign=top>
+<td> <a name="vLam00"></a> [vLam00] </td> 
+<td> A. van Lamsweerde. <a href="Papers/vLam00.pdf"> <b>Formal Specification: a Roadmap</b></a>. <em>The Future of Software Engineering</em>. ACM Press, 2000. </td> 
+</tr>
+
+<!--
+<tr valign=top> <td> <a name="Leav06"></a> [Leav06] </td> <td> G. Leavens, Y. Cheon. <a href="Papers/Leav06.pdf"> Design by Contract with JML</a>. Technical report, 2006. </td> </tr>
+-->
+
+<!--
+<tr valign=top>
+<td> <a name="Lein10a"></a> [Lein10a] </td> 
+<td> R. Leino. <a href="Papers/Lein10a.pdf"><b>Dafny: An Automatic Program Verifier for Functional Correctness</b></a>.  
+In LPAR-16, volume 6355 of LNCS, pages 348-370. Springer, 2010. 
+</td> 
+</tr>
+-->
+
+<!--
+<tr valign=top> 
+<td> <a name="Lein10b"></a> [Lein10b] </td> 
+<td> R. Leino and R. Monahan.  
+<a href="Papers/Lein10b.pdf"><b> Dafny meets the Verification Benchmarks Challenge</b></a>.
+In VSTTE 2010, volume 6217 of LNCS, pages 112-126.  Springer, 2010.
+</td> 
+</tr>
+-->
+
+<tr valign=top> 
+<td> <a name="Lein13"></a> [Lein13] </td> 
+<td>R. Leino.  
+<a href="Papers/Lein13.pdf"><b>Developing Verified Programs with Dafny</b></a>.
+Tutorial notes, ICSE 2013.
+</td> 
+</tr>
+
+<tr valign=top> 
+<td> <a name="Medv00"></a> [Medv00] </td>
+<td> N. Medvidović. <a href="Papers/Medv00.pdf"> <b>Introduction to Formal Methods</b></a>.
+Class notes for <a href="http://csse.usc.edu/classes/cs599_2000/">Formal Methods in Software Architectures</a> course, 2000. </td>
+</tr>  
+
+<tr valign=top> <td> <a name="Roth07"></a> [Roth07] </td>
+<td> A. Roth and P. Schmitt. 
+<a href="Papers/Roth07.pdf"> <b>Formal Specification</b></a>. Chapter 5 of [Beck07].
+</td>
+</tr>  
+
+<tr valign=top> <td> <a name="Wing95"></a> [Wing95] </td>
+<td> J. M. Wing. <a href="Papers/Wing95.pdf"><b>Hints to Specifiers</b></a>. Technical Report CMU-CS-95-118R. Department of Computer Science, Carnegie-Mellon University, 1995. </td>
+</tr> 
+
+<tr valign=top> 
+<td> <a name="Wood09"></a> [Wood09] </td>
+<td> Woodcock, Larsen, Bicarregui, & Fitzgerald.  
+<a href="Papers/Wood09.pdf"><b>Formal Methods: Practice and Experience.</b></a>
+ACM Comput. Surv. 41(4), 2009.
+</td>
+</tr>
+</table>
+   </div>
+  </div>
+  <!--#include virtual="footer.shtml" -->
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+ </body>
+</html>
